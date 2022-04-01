@@ -11,7 +11,7 @@ function crearGato(nombre, edad) {
   const gato = {
       nombre : nombre,
       edad : edad,
-      meow : function(){ return "meow"}
+      meow : function(){ return "Meow!"}
   }
   return gato;
 }
@@ -116,7 +116,7 @@ function agregarAmigo(usuario, nuevoAmigo) {
 }
 const usuario2 = {
   amigos: ["Juan", "Carlos", "Daniel"],
-  esPremiun : false,
+  esPremium : false,
   posts : [
     {likes : 1},
     {likes : 5},
@@ -125,11 +125,11 @@ const usuario2 = {
 }
 const usuario3 = {
   amigos: ["Juan", "Carlos", "Daniel"],
-  esPremiun : false
+  esPremium : false
 }
 const usuario4 = {
   amigos: ["Juan", "Carlos", "Daniel"],
-  esPremiun : false
+  esPremium : false
 }
 
 //console.log(agregarAmigo(usuario2, "Joel"))
@@ -143,7 +143,7 @@ function pasarUsuarioAPremium(usuarios) {
   // Devuelve el array de usuarios
   // Tu código:
   for (user of usuarios){
-      user["esPremiun"] = true;
+      user["esPremium"] = true;
   }
   return usuarios;
 }
@@ -176,8 +176,7 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
   producto.calcularPrecioDescuento = function() {
-    let descuento = producto.precio * producto.porcentajeDeDescuento;
-    precioConDescuento = producto.precio - descuento;
+    return this.precio - ( this.precio * this.porcentajeDeDescuento );
   }
   return producto;
 }
@@ -185,8 +184,8 @@ const botin = {
   precio : 20,
   porcentajeDeDescuento : 0.2,
 }
-agregarMetodoCalculoDescuento(botin);
-console.log(botin.calcularPrecioDescuento())
+//console.log(agregarMetodoCalculoDescuento(botin));
+//console.log(botin.calcularPrecioDescuento())
 // No modificar nada debajo de esta línea
 // --------------------------------
 
